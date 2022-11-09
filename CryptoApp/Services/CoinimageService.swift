@@ -41,10 +41,10 @@ class CoinImageService {
                 return UIImage(data: data)
             })
             .sink(receiveCompletion: NetworkingManager.handleCompletation, receiveValue: { [weak self] returnedImage in
-                guard let self = self, let downloadCoinImage = returnedImage else {return}
+                guard let self = self, let _ = returnedImage else {return}
                 self.image = returnedImage
                 self.imageSubscription?.cancel()
-                self.fileManager.saveImage(image: downloadCoinImage, imageName: self.imageName, folderName: self.folderName)
+                //self.fileManager.saveImage(image: downloadCoinImage, imageName: self.imageName, folderName: self.folderName)
             })
     }
 }
