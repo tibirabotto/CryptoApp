@@ -36,6 +36,11 @@ struct PortfolioView: View {
                     trailingNavBarButtons
                 }
             }
+            .onChange(of: vm.searchText) { value in
+                if value == "" {
+                        removeSeletedCoin()
+                }
+            }
         }
         
     }
@@ -45,13 +50,13 @@ extension PortfolioView {
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack(spacing: 10) {
-                ForEach(vm.allCoins) { coin in
+                ForEach(vm.searchText.isEmpty ? vm.portolioCoins : vm.allCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
                         .onTapGesture {
                             withAnimation(.easeIn) {
-                                seletedCoin = coin
+                                updateSeleteedCoin(coin: coin)
                             }
                         }
                         .background(
@@ -65,6 +70,17 @@ extension PortfolioView {
             .frame(height: 120)
             .padding(.leading)
         })
+    }
+    
+    private func updateSeleteedCoin(coin: CoinModel) {
+        seletedCoin = coin
+        
+        if let portfolioCoin = vm.portolioCoins.first(where: { $0.id == coin.id }),
+           let amount = portfolioCoin.currentHoldings {
+            quantityText = "\(amount)"
+        } else {
+            quantityText = ""
+        }
     }
     
     private func getCurrentValue() -> Double {
@@ -121,7 +137,11 @@ extension PortfolioView {
     }
     
     private func saveButtonOnPressed() {
-        guard let coin = seletedCoin else {return}
+        guard let coin = seletedCoin,
+              let amount = Double(quantityText)
+              else {return}
+        
+        vm.updatePortfolio(coin: coin, amount: amount)
         
         withAnimation(.easeIn) {
             showCheckMark = true
