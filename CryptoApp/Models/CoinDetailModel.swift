@@ -8,10 +8,6 @@
 import Foundation
 
 
-// URL https://api.coingecko.com/api/v3/coins/bitcoin
-
-
-
 struct CoinDetailModel: Codable {
     let id, symbol, name: String?
     let blockTimeInMinutes: Int?
