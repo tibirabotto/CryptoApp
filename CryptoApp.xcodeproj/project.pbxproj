@@ -12,6 +12,7 @@
 		7A5D761E291DB0F300B391D1 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D761D291DB0F300B391D1 /* PortfolioDataService.swift */; };
 		7A5E9F86291B528F007B74D4 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E9F85291B528F007B74D4 /* SearchBarView.swift */; };
 		7A5E9F88291B57D5007B74D4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E9F87291B57D5007B74D4 /* UIApplication.swift */; };
+		7A662459291E9CC900069773 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A662458291E9CC900069773 /* DetailView.swift */; };
 		7A683DF4291E03C20086A4A1 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A683DF3291E03C20086A4A1 /* HapticManager.swift */; };
 		7A76BA84291992CC0005B3F4 /* CryptoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76BA83291992CC0005B3F4 /* CryptoAppApp.swift */; };
 		7A76BA86291992CC0005B3F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76BA85291992CC0005B3F4 /* ContentView.swift */; };
@@ -47,6 +48,7 @@
 		7A5D761D291DB0F300B391D1 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		7A5E9F85291B528F007B74D4 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		7A5E9F87291B57D5007B74D4 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = ../../../../../../Downloads/Resources/Extensions/UIApplication.swift; sourceTree = "<group>"; };
+		7A662458291E9CC900069773 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7A683DF3291E03C20086A4A1 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		7A76BA80291992CC0005B3F4 /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A76BA83291992CC0005B3F4 /* CryptoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAppApp.swift; sourceTree = "<group>"; };
@@ -88,6 +90,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A662455291E9C8400069773 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7A662457291E9C9F00069773 /* ViewModal */,
+				7A662456291E9C9800069773 /*  Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		7A662456291E9C9800069773 /*  Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A662458291E9CC900069773 /* DetailView.swift */,
+			);
+			path = " Views";
+			sourceTree = "<group>";
+		};
+		7A662457291E9C9F00069773 /* ViewModal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModal;
+			sourceTree = "<group>";
+		};
 		7A76BA77291992CC0005B3F4 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +168,7 @@
 		7A76BA98291996970005B3F4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7A662455291E9C8400069773 /* Detail */,
 				7A76BAA0291998AE0005B3F4 /* Components */,
 				7A76BA99291996B60005B3F4 /* Home */,
 			);
@@ -325,6 +352,7 @@
 				7A76BA84291992CC0005B3F4 /* CryptoAppApp.swift in Sources */,
 				7A5E9F88291B57D5007B74D4 /* UIApplication.swift in Sources */,
 				7A76BAA3291998E90005B3F4 /* CircleButtonView.swift in Sources */,
+				7A662459291E9CC900069773 /* DetailView.swift in Sources */,
 				7A683DF4291E03C20086A4A1 /* HapticManager.swift in Sources */,
 				7A76BA972919958D0005B3F4 /* Color.swift in Sources */,
 				7A5E9F86291B528F007B74D4 /* SearchBarView.swift in Sources */,
