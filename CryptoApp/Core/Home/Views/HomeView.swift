@@ -18,37 +18,37 @@ struct HomeView: View {
     
     
     var body: some View {
-        ZStack {
-            Color.theme.background
-                .ignoresSafeArea()
-                .sheet(isPresented: $showPortfolioView) {
-                    PortfolioView()
-                        .environmentObject(vm)
-                }
-            
-            VStack {
-                homeHeader
-                HomeStatsView(showPortfolio: $showPortfolio)
-                SearchBarView(searchText: $vm.searchText)
+        NavigationStack {
+            ZStack {
+                Color.theme.background
+                    .ignoresSafeArea()
+                    .sheet(isPresented: $showPortfolioView) {
+                        PortfolioView()
+                            .environmentObject(vm)
+                    }
                 
-                columnTitles
-                
-                if !showPortfolio {
-                    allCoinsList
-                    .transition(.move(edge: .leading))
+                VStack {
+                    homeHeader
+                    HomeStatsView(showPortfolio: $showPortfolio)
+                    SearchBarView(searchText: $vm.searchText)
+                    
+                    columnTitles
+                    
+                    if !showPortfolio {
+                        allCoinsList
+                        .transition(.move(edge: .leading))
+                    }
+                    if showPortfolio {
+                        portfolioCoinsList
+                            .transition(.move(edge: .trailing))
+                    }
+                    Spacer(minLength: 0)
                 }
-                if showPortfolio {
-                    portfolioCoinsList
-                        .transition(.move(edge: .trailing))
-                }
-                Spacer(minLength: 0)
             }
         }
-        .background(
-            NavigationLink(destination: DetailLoadingView(coin: $selectCoin), isActive: $showDetailView, label: {
-                EmptyView()
-            })
-        )
+        .navigationDestination(isPresented: $showDetailView, destination: {
+            DetailLoadingView(coin: $selectCoin)
+        })
     }
 }
 
