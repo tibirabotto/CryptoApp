@@ -45,6 +45,8 @@ struct DetailView: View {
                 Divider()
                 overviewGrid
                 
+                
+                
                 additionalTitle
                 Divider()
                 additionalGrid

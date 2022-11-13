@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-struct CoinDetailModel: Codable {
+struct CoinDetailModel: Codable, Identifiable {
     let id, symbol, name: String?
     let blockTimeInMinutes: Int?
     let hashingAlgorithm: String?
@@ -22,6 +22,9 @@ struct CoinDetailModel: Codable {
     }
 }
 
+struct Description: Codable {
+    let en: String?
+}
 
 struct Links: Codable {
     let homepage: [String]?
@@ -33,7 +36,5 @@ struct Links: Codable {
     }
 }
 
-struct Description: Codable {
-    let en: String?
-}
+
 

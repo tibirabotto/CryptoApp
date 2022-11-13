@@ -13,6 +13,7 @@ class DetailViewModal: ObservableObject {
     @Published var overviewStatistics: [StatisticModel] = []
     @Published var additionalStatistics: [StatisticModel] = []
     
+    
     @Published var coin: CoinModel
     private let coinDetailService: CoinDetailDataService
     private var cancellables = Set<AnyCancellable>()
@@ -80,6 +81,8 @@ class DetailViewModal: ObservableObject {
                 self?.additionalStatistics = returedArrays.additional
             }
             .store(in: &cancellables)
+        
+        
     }
 
 }
